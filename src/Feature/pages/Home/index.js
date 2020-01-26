@@ -4,7 +4,7 @@ import Card from "../../components/Card";
 function Home() {
   const initialState = [];
   const [dataPokemon, setdataPokemon] = useState(initialState);
-  const [Loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -27,7 +27,7 @@ function Home() {
     setdataPokemon(getMoreDataPokemon);
   }
 
-  return Loading ? (
+  return isLoading ? (
     <h1>Loading...</h1>
   ) : (
     <div className="container pt-5">
